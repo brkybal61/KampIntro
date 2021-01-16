@@ -31,6 +31,7 @@ namespace ClassIntro
             foreach (var kurs in kurslar)
             {
                 Console.WriteLine(kurs.KursAdi + " : " + kurs.Egitmen);
+                //Deneme
             }
         }
     }
