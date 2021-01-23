@@ -6,10 +6,11 @@ namespace GenericsIntro
     {
         static void Main(string[] args)
         {
-            MyList<string> isimler=new MyList<string>();
-            isimler.Add("Berkay");
+            //MyList names = new MyList(); hata verir çünkü çalışacağı tipi ister.
+            MyList<string> isimler=new MyList<string>();  //Generic bir class olduğu için çalışacağı tipi söylemeliyiz.string dersek string türünde liste
+            isimler.Add("Berkay");                                                                                   // int dersek int türünde bir liste olurdu.
+                                                                                                                     // Arka planda MyList teki T'miz String oluyor.
             
-            Console.WriteLine("Hello World!");
         }
     }
 }
