@@ -4,6 +4,7 @@ using System.Text;
 
 namespace OOP2
 {
+    //Tüzel Müşteri bir Müşteridir.
     //Tüzel Müşteri
     //CoorporateCustomer aslında bir Customerdır. Customer'da olan herşey CoorporateCustomerda da Vardır.
     class CoorporateCustomer:Customer   //Miras-->inheritance

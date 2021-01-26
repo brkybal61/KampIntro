@@ -36,5 +36,15 @@ namespace GenericsIntro
             items[items.Length - 1] = item;  //Eklemek istenen elemanı yani item'ı açılan yere eklememizi sağlar!
         }
 
+        public int Length //Eleman sayısını verir!
+        {
+            get { return items.Length; }
+        }
+
+        public T[] Items //Elemanları yazdırır.!
+        {
+            get { return items; }
+        }
+
     }
 }

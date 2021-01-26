@@ -7,6 +7,9 @@ namespace OOP3
     {
         static void Main(string[] args)
         {
+
+            // Interface***
+            // Kredilerin instancelarını oluşturma
             //IhtiyacKrediManager ihtiyacKrediManager = new IhtiyacKrediManager();
             //ihtiyacKrediManager.Calculate();
 
@@ -16,8 +19,12 @@ namespace OOP3
             //KonutKrediManager konutKrediManager = new KonutKrediManager();
             //konutKrediManager.Calculate();
 
+            //---------------------------------------
+            // Interface'lerde interface'i implement eden sınıfların referans numarasını tutabilir.
+            // Inheritance'taki gibi.
 
 
+            // Ekran seçimleri olarak düşün.
             ICreditManager ihtiyacKrediManager = new IhtiyacKrediManager();
 
             ICreditManager tasitKrediManager = new TasitKrediManager();
@@ -26,11 +33,17 @@ namespace OOP3
 
             ILoggerService databaseLoggerService = new DatabaseLoggerService();
             ILoggerService fileLoggerService = new FileLoggerService();
+            // Bu yazılımda sürdürülebilirliği sağlar!
 
+
+            //Başvuru Yapma:
             ApplicationManager applicationManager = new ApplicationManager();
-            applicationManager.BasvuruYap(tasitKrediManager, fileLoggerService);
+          //applicationManager.BasvuruYap(tasitKrediManager, new SmsLoggerService());
+          //applicationManager.BasvuruYap(konutKrediManager, databaseLoggerService);
+            applicationManager.BasvuruYap(new EsnafKrediManager(), new List<ILoggerService> {new DatabaseLoggerService(),new SmsLoggerService() });
 
             List<ICreditManager> krediler = new List<ICreditManager> { ihtiyacKrediManager, tasitKrediManager };
+
 
             //applicationManager.KrediOnBilgilendirmesiYap(krediler);
         }
